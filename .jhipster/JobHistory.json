@@ -45,5 +45,6 @@
     "entityTableName": "job_history",
     "dto": "mapstruct",
     "pagination": "infinite-scroll",
-    "service": "serviceImpl"
+    "service": "serviceImpl",
+    "enableEntityAudit": true
 }

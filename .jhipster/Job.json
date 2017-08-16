@@ -34,5 +34,6 @@
     "entityTableName": "job",
     "dto": "mapstruct",
     "pagination": "pagination",
-    "service": "no"
+    "service": "no",
+    "enableEntityAudit": true
 }

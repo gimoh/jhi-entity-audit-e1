@@ -24,5 +24,6 @@
     "entityTableName": "task",
     "dto": "mapstruct",
     "pagination": "no",
-    "service": "serviceImpl"
+    "service": "serviceImpl",
+    "enableEntityAudit": true
 }

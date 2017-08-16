@@ -203,6 +203,7 @@ dependencies {
     optional ("org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}") {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
+    compile 'org.javers:javers-spring-boot-starter-sql:3.5.0'
     //jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
 }
 
