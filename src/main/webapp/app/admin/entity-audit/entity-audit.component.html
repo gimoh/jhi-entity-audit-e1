@@ -64,7 +64,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let audit of audits">
+            <tr *ngFor="let audit of audits; trackBy: trackId">
               <td>{{ audit.entityId }}</td>
               <td>{{ audit.action }}</td>
               <td>{{ audit.commitVersion }}</td>

@@ -37,4 +37,8 @@ export class EntityAuditComponent implements OnInit {
       }, (err) => this.loading = false);
   }
 
+  trackId(index: number, item: EntityAuditEvent) {
+    return item.id;
+  }
+
 }
