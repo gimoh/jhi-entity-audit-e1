@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EntityAuditEvent } from './entity-audit-event.model';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class EntityAuditService {
 
-  constructor() { }
+  constructor(private http: Http) {
+
+  }
 
   getAllAudited(): Observable<string[]> {
-    return Observable.of(['Foo', 'Bar']);
+    return this.http.get('api/audits/entity/all').map((response) => response.json())
+    // return Observable.of(['Foo', 'Bar']);
   }
 
   findByEntity(entity: string, limit: number): Observable<EntityAuditEvent[]> {
+
+
+
     return Observable.of([
       {
         id: '1',
