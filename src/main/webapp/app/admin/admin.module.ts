@@ -27,7 +27,9 @@ import {
     LogsService,
     UserResolvePagingParams,
     UserResolve,
-    UserModalService
+    UserModalService,
+    EntityAuditComponent,
+    EntityAuditService
 } from './';
 
 @NgModule({
@@ -50,7 +52,8 @@ import {
         JhiHealthModalComponent,
         JhiDocsComponent,
         JhiMetricsMonitoringComponent,
-        JhiMetricsMonitoringModalComponent
+        JhiMetricsMonitoringModalComponent,
+        EntityAuditComponent
     ],
     entryComponents: [
         UserMgmtDialogComponent,
@@ -66,7 +69,8 @@ import {
         LogsService,
         UserResolvePagingParams,
         UserResolve,
-        UserModalService
+        UserModalService,
+        EntityAuditService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
