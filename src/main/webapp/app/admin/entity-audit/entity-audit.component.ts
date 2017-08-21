@@ -30,6 +30,8 @@ export class EntityAuditComponent implements OnInit {
       .subscribe((audits) => {
         this.audits = audits;
         this.loading = false;
+        console.log(audits);
+
       }, (err) => this.loading = false);
   }
 
