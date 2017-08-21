@@ -1,28 +1,28 @@
 
 <div *ngIf="job">
-    <h2><span>Job</span> {{job.id}}</h2>
+    <h2><span jhiTranslate="jhipsterApp.job.detail.title">Job</span> {{job.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
-        <dt><span>Job Title</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.job.jobTitle">Job Title</span></dt>
         <dd>
             <span>{{job.jobTitle}}</span>
         </dd>
-        <dt><span>Min Salary</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.job.minSalary">Min Salary</span></dt>
         <dd>
             <span>{{job.minSalary}}</span>
         </dd>
-        <dt><span>Max Salary</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.job.maxSalary">Max Salary</span></dt>
         <dd>
             <span>{{job.maxSalary}}</span>
         </dd>
-        <dt><span>Employee</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.job.employee">Employee</span></dt>
         <dd>
             <div *ngIf="job.employeeId">
                 <a [routerLink]="['/employee', job.employeeId]">{{job.employeeId}}</a>
             </div>
         </dd>
-        <dt><span>Task</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.job.task">Task</span></dt>
         <dd>
             <span *ngFor="let task of job.tasks; let last = last">
                 <a [routerLink]="['/task', task?.id ]">{{task.title}}</a>{{last ? '' : ', '}}
@@ -33,13 +33,13 @@
     <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
     <button type="button"
             [routerLink]="['/', { outlets: { popup: 'job/'+ job.id + '/edit'} }]"
             replaceUrl="true"
             class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
 </div>

@@ -1,9 +1,9 @@
 <div>
     <h2>
-        <span>Employees</span>
+        <span jhiTranslate="jhipsterApp.employee.home.title">Employees</span>
         <button class="btn btn-primary float-right jh-create-entity create-employee" [routerLink]="['/', { outlets: { popup: ['employee-new'] } }]">
             <span class="fa fa-plus"></span>
-            <span >
+            <span  jhiTranslate="jhipsterApp.employee.home.createLabel">
             Create new Employee
             </span>
         </button>
@@ -16,17 +16,17 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
-            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="firstName"><span>First Name</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="lastName"><span>Last Name</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="email"><span>Email</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="phoneNumber"><span>Phone Number</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="hireDate"><span>Hire Date</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="salary"><span>Salary</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="commissionPct"><span>Commission Pct</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="departmentId"><span>Department</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="managerId"><span>Manager</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="userId"><span>User</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="jhipsterApp.employee.firstName">First Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="jhipsterApp.employee.lastName">Last Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="email"><span jhiTranslate="jhipsterApp.employee.email">Email</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="phoneNumber"><span jhiTranslate="jhipsterApp.employee.phoneNumber">Phone Number</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="hireDate"><span jhiTranslate="jhipsterApp.employee.hireDate">Hire Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="salary"><span jhiTranslate="jhipsterApp.employee.salary">Salary</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="commissionPct"><span jhiTranslate="jhipsterApp.employee.commissionPct">Commission Pct</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="departmentId"><span jhiTranslate="jhipsterApp.employee.department">Department</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="managerId"><span jhiTranslate="jhipsterApp.employee.manager">Manager</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="userId"><span jhiTranslate="jhipsterApp.employee.user">User</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -59,21 +59,21 @@
                                 [routerLink]="['../employee', employee.id ]"
                                 class="btn btn-info btn-sm">
                             <span class="fa fa-eye"></span>
-                            <span class="hidden-md-down">View</span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'employee/'+ employee.id + '/edit'} }]"
                                 replaceUrl="true"
                                 class="btn btn-primary btn-sm">
                             <span class="fa fa-pencil"></span>
-                            <span class="hidden-md-down">Edit</span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'employee/'+ employee.id + '/delete'} }]"
                                 replaceUrl="true"
                                 class="btn btn-danger btn-sm">
                             <span class="fa fa-remove"></span>
-                            <span class="hidden-md-down">Delete</span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
                     </div>
                 </td>

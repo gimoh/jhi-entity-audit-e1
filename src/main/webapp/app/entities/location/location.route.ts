@@ -15,7 +15,7 @@ export const locationRoute: Routes = [
         component: LocationComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Locations'
+            pageTitle: 'jhipsterApp.location.home.title'
         },
         canActivate: [UserRouteAccessService]
     }, {
@@ -23,7 +23,7 @@ export const locationRoute: Routes = [
         component: LocationDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Locations'
+            pageTitle: 'jhipsterApp.location.home.title'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -35,7 +35,7 @@ export const locationPopupRoute: Routes = [
         component: LocationPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Locations'
+            pageTitle: 'jhipsterApp.location.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -45,7 +45,7 @@ export const locationPopupRoute: Routes = [
         component: LocationPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Locations'
+            pageTitle: 'jhipsterApp.location.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -55,7 +55,7 @@ export const locationPopupRoute: Routes = [
         component: LocationDeletePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Locations'
+            pageTitle: 'jhipsterApp.location.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

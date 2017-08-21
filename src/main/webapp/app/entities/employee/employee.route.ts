@@ -15,7 +15,7 @@ export const employeeRoute: Routes = [
         component: EmployeeComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Employees'
+            pageTitle: 'jhipsterApp.employee.home.title'
         },
         canActivate: [UserRouteAccessService]
     }, {
@@ -23,7 +23,7 @@ export const employeeRoute: Routes = [
         component: EmployeeDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Employees'
+            pageTitle: 'jhipsterApp.employee.home.title'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -35,7 +35,7 @@ export const employeePopupRoute: Routes = [
         component: EmployeePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Employees'
+            pageTitle: 'jhipsterApp.employee.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -45,7 +45,7 @@ export const employeePopupRoute: Routes = [
         component: EmployeePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Employees'
+            pageTitle: 'jhipsterApp.employee.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -55,7 +55,7 @@ export const employeePopupRoute: Routes = [
         component: EmployeeDeletePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Employees'
+            pageTitle: 'jhipsterApp.employee.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

@@ -1,50 +1,50 @@
 
 <div *ngIf="employee">
-    <h2><span>Employee</span> {{employee.id}}</h2>
+    <h2><span jhiTranslate="jhipsterApp.employee.detail.title">Employee</span> {{employee.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
-        <dt><span>First Name</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.firstName">First Name</span></dt>
         <dd>
             <span>{{employee.firstName}}</span>
         </dd>
-        <dt><span>Last Name</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.lastName">Last Name</span></dt>
         <dd>
             <span>{{employee.lastName}}</span>
         </dd>
-        <dt><span>Email</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.email">Email</span></dt>
         <dd>
             <span>{{employee.email}}</span>
         </dd>
-        <dt><span>Phone Number</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.phoneNumber">Phone Number</span></dt>
         <dd>
             <span>{{employee.phoneNumber}}</span>
         </dd>
-        <dt><span>Hire Date</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.hireDate">Hire Date</span></dt>
         <dd>
             <span>{{employee.hireDate | date:'medium'}}</span>
         </dd>
-        <dt><span>Salary</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.salary">Salary</span></dt>
         <dd>
             <span>{{employee.salary}}</span>
         </dd>
-        <dt><span>Commission Pct</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.commissionPct">Commission Pct</span></dt>
         <dd>
             <span>{{employee.commissionPct}}</span>
         </dd>
-        <dt><span>Department</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.department">Department</span></dt>
         <dd>
             <div *ngIf="employee.departmentId">
                 <a [routerLink]="['/department', employee.departmentId]">{{employee.departmentId}}</a>
             </div>
         </dd>
-        <dt><span>Manager</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.manager">Manager</span></dt>
         <dd>
             <div *ngIf="employee.managerId">
                 <a [routerLink]="['/employee', employee.managerId]">{{employee.managerId}}</a>
             </div>
         </dd>
-        <dt><span>User</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.employee.user">User</span></dt>
         <dd>
             {{employee.userId}}
         </dd>
@@ -53,13 +53,13 @@
     <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
     <button type="button"
             [routerLink]="['/', { outlets: { popup: 'employee/'+ employee.id + '/edit'} }]"
             replaceUrl="true"
             class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
 </div>

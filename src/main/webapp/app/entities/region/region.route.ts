@@ -15,7 +15,7 @@ export const regionRoute: Routes = [
         component: RegionComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Regions'
+            pageTitle: 'jhipsterApp.region.home.title'
         },
         canActivate: [UserRouteAccessService]
     }, {
@@ -23,7 +23,7 @@ export const regionRoute: Routes = [
         component: RegionDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Regions'
+            pageTitle: 'jhipsterApp.region.home.title'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -35,7 +35,7 @@ export const regionPopupRoute: Routes = [
         component: RegionPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Regions'
+            pageTitle: 'jhipsterApp.region.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -45,7 +45,7 @@ export const regionPopupRoute: Routes = [
         component: RegionPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Regions'
+            pageTitle: 'jhipsterApp.region.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -55,7 +55,7 @@ export const regionPopupRoute: Routes = [
         component: RegionDeletePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Regions'
+            pageTitle: 'jhipsterApp.region.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

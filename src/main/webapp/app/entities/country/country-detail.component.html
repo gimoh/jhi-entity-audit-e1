@@ -1,14 +1,14 @@
 
 <div *ngIf="country">
-    <h2><span>Country</span> {{country.id}}</h2>
+    <h2><span jhiTranslate="jhipsterApp.country.detail.title">Country</span> {{country.id}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row-md jh-entity-details">
-        <dt><span>Country Name</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.country.countryName">Country Name</span></dt>
         <dd>
             <span>{{country.countryName}}</span>
         </dd>
-        <dt><span>Region</span></dt>
+        <dt><span jhiTranslate="jhipsterApp.country.region">Region</span></dt>
         <dd>
             <div *ngIf="country.regionId">
                 <a [routerLink]="['/region', country.regionId]">{{country.regionId}}</a>
@@ -19,13 +19,13 @@
     <button type="submit"
             (click)="previousState()"
             class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
     <button type="button"
             [routerLink]="['/', { outlets: { popup: 'country/'+ country.id + '/edit'} }]"
             replaceUrl="true"
             class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
     </button>
 </div>

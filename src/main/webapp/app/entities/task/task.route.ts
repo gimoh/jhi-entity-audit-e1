@@ -15,7 +15,7 @@ export const taskRoute: Routes = [
         component: TaskComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Tasks'
+            pageTitle: 'jhipsterApp.task.home.title'
         },
         canActivate: [UserRouteAccessService]
     }, {
@@ -23,7 +23,7 @@ export const taskRoute: Routes = [
         component: TaskDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Tasks'
+            pageTitle: 'jhipsterApp.task.home.title'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -35,7 +35,7 @@ export const taskPopupRoute: Routes = [
         component: TaskPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Tasks'
+            pageTitle: 'jhipsterApp.task.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -45,7 +45,7 @@ export const taskPopupRoute: Routes = [
         component: TaskPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Tasks'
+            pageTitle: 'jhipsterApp.task.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -55,7 +55,7 @@ export const taskPopupRoute: Routes = [
         component: TaskDeletePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Tasks'
+            pageTitle: 'jhipsterApp.task.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

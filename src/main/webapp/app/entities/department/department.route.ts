@@ -15,7 +15,7 @@ export const departmentRoute: Routes = [
         component: DepartmentComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Departments'
+            pageTitle: 'jhipsterApp.department.home.title'
         },
         canActivate: [UserRouteAccessService]
     }, {
@@ -23,7 +23,7 @@ export const departmentRoute: Routes = [
         component: DepartmentDetailComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Departments'
+            pageTitle: 'jhipsterApp.department.home.title'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -35,7 +35,7 @@ export const departmentPopupRoute: Routes = [
         component: DepartmentPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Departments'
+            pageTitle: 'jhipsterApp.department.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -45,7 +45,7 @@ export const departmentPopupRoute: Routes = [
         component: DepartmentPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Departments'
+            pageTitle: 'jhipsterApp.department.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
@@ -55,7 +55,7 @@ export const departmentPopupRoute: Routes = [
         component: DepartmentDeletePopupComponent,
         data: {
             authorities: ['ROLE_USER'],
-            pageTitle: 'Departments'
+            pageTitle: 'jhipsterApp.department.home.title'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'
