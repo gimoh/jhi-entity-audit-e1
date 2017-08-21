@@ -66,6 +66,16 @@
           <tbody>
             <tr *ngFor="let audit of audits">
               <td>{{ audit.entityId }}</td>
+              <td>{{ audit.action }}</td>
+              <td>{{ audit.commitVersion }}</td>
+              <td><pre>{{ audit.entityValue | json }}</pre></td>
+              <td>{{ audit.modifiedDate }}</td>
+              <td>{{ audit.modifiedBy }}</td>
+              <td>
+                <button type="button" class="btn btn-info btn-xs">
+                  <i class="fa fa-eye"></i>
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
