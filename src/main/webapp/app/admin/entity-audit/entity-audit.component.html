@@ -49,6 +49,9 @@
             <label for="searchField" jhiTranslate="entityAudit.result.searchFieldLabel">Filter:</label>
             <input type="text" class="form-control" id="searchField" placeholder="global filter" />
           </div>
+          <input type="text" class="form-control" id="searchFieldEntityId"
+              name="searchFieldEntityId" placeholder="entity id"
+              [(ngModel)]="filterEntityId" />
         </form>
 
         <table class="table table-condensed table-striped table-bordered">
@@ -64,7 +67,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let audit of (audits | orderBy:orderProp:reverse); trackBy: trackId">
+            <tr *ngFor="let audit of (audits | pureFilter:filterEntityId:'entityId' | orderBy:orderProp:reverse); trackBy: trackId">
               <td>{{ audit.entityId }}</td>
               <td>{{ audit.action }}</td>
               <td>{{ audit.commitVersion }}</td>
