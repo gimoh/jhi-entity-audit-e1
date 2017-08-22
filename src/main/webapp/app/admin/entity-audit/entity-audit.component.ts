@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { EntityAuditService } from './entity-audit.service';
 import { EntityAuditEvent } from './entity-audit-event.model';
+import * as diff2html from 'diff2html';
 
 @Component({
   selector: 'jhi-entity-audit',
@@ -38,7 +39,22 @@ export class EntityAuditComponent implements OnInit {
   }
 
   trackId(index: number, item: EntityAuditEvent) {
-    return item.id;
-  }
+	   return item.id;
+   }
 
+  openChange(audit) {
+    if (audit.commitVersion <= 2) {
+      alert("There is no previous version available for this entry. \n This is the first audited captured for this object.");
+    } else {
+      this.service.getPrevVersion(audit.entityType, audit.entityId, audit.commitVersion).subscribe((data) => {
+        alert(data.entityType);
+
+        var previousVersion = JSON.parse(data.entityValue),
+              currentVersion = audit.entityValue;
+
+        alert(diff2html);
+
+      });
+    }
+  }
 }

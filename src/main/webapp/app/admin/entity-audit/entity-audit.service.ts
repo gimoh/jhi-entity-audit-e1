@@ -16,7 +16,7 @@ export class EntityAuditService {
     let params: URLSearchParams = new URLSearchParams();
     params.set('entityType', entity);
     params.set('limit', limit.toString());
-    
+
     return this.http.get('api/audits/entity/changes', { search: params }).map((response) => response.json());
   }
 
@@ -24,7 +24,7 @@ export class EntityAuditService {
     let params: URLSearchParams = new URLSearchParams();
     params.set('qualifiedName', qualifiedName);
     params.set('entityId', entityId);
-    params.set('commitVersion', entityId.toString());
+    params.set('commitVersion', commitVersion.toString());
 
     return this.http.get('api/audits/entity/changes/version/previous', {search: params}).map((response) => response.json());
   }
