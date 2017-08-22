@@ -15,6 +15,8 @@ export class EntityAuditComponent implements OnInit {
   limits = [25, 50, 100, 200];
   selectedLimit = this.limits[0];
   loading = false;
+  orderProp: string;
+  reverse = false;
 
   constructor(private service: EntityAuditService) { }
 

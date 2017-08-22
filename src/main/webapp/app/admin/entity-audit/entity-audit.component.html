@@ -54,17 +54,17 @@
         <table class="table table-condensed table-striped table-bordered">
           <thead>
             <tr>
-              <th jhiTranslate="entityAudit.result.tableHeader.entityId">Entity Id</th>
-              <th jhiTranslate="entityAudit.result.tableHeader.action">Action</th>
-              <th jhiTranslate="entityAudit.result.tableHeader.version">Version</th>
+              <th (click)="orderProp = 'entityId'; reverse = !reverse" jhiTranslate="entityAudit.result.tableHeader.entityId">Entity Id</th>
+              <th (click)="orderProp = 'action'; reverse = !reverse" jhiTranslate="entityAudit.result.tableHeader.action">Action</th>
+              <th (click)="orderProp = 'commitVersion'; reverse = !reverse" jhiTranslate="entityAudit.result.tableHeader.version">Version</th>
               <th jhiTranslate="entityAudit.result.tableHeader.value">Value</th>
-              <th jhiTranslate="entityAudit.result.tableHeader.modifiedDate">Modified Date</th>
-              <th jhiTranslate="entityAudit.result.tableHeader.modifiedBy">Modified By</th>
+              <th (click)="orderProp = 'modifiedDate'; reverse = !reverse" jhiTranslate="entityAudit.result.tableHeader.modifiedDate">Modified Date</th>
+              <th (click)="orderProp = 'modifiedBy'; reverse = !reverse" jhiTranslate="entityAudit.result.tableHeader.modifiedBy">Modified By</th>
               <th><i class="fa fa-eye"></i></th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let audit of audits; trackBy: trackId">
+            <tr *ngFor="let audit of (audits | orderBy:orderProp:reverse); trackBy: trackId">
               <td>{{ audit.entityId }}</td>
               <td>{{ audit.action }}</td>
               <td>{{ audit.commitVersion }}</td>
