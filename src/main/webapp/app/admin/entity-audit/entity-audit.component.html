@@ -46,12 +46,11 @@
 
         <form class="form-inline">
           <div class="form-group">
-            <label for="searchField" jhiTranslate="entityAudit.result.searchFieldLabel">Filter:</label>
-            <input type="text" class="form-control" id="searchField" placeholder="global filter" />
+            <label for="searchFieldEntityId" jhiTranslate="entityAudit.result.searchFieldLabel">Filter:</label>
+            <input type="text" class="form-control" id="searchFieldEntityId"
+                name="searchFieldEntityId" placeholder="entity id"
+                [(ngModel)]="filterEntityId" />
           </div>
-          <input type="text" class="form-control" id="searchFieldEntityId"
-              name="searchFieldEntityId" placeholder="entity id"
-              [(ngModel)]="filterEntityId" />
         </form>
 
         <table class="table table-condensed table-striped table-bordered">
