@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { EntityAuditService } from './entity-audit.service';
 import { EntityAuditEvent } from './entity-audit-event.model';
-import * as diff2html from 'diff2html';
+import { EntityAuditModalComponent } from './entity-audit-modal.component';
 
 @Component({
   selector: 'jhi-entity-audit',
@@ -17,7 +18,10 @@ export class EntityAuditComponent implements OnInit {
   selectedLimit = this.limits[0];
   loading = false;
 
-  constructor(private service: EntityAuditService) { }
+  constructor(
+    private modalService: NgbModal,
+    private service: EntityAuditService
+  ){}
 
   ngOnInit() {
     this.service.getAllAudited().subscribe((entities) => {
@@ -43,18 +47,23 @@ export class EntityAuditComponent implements OnInit {
    }
 
   openChange(audit) {
+
     if (audit.commitVersion <= 2) {
       alert("There is no previous version available for this entry. \n This is the first audited captured for this object.");
     } else {
-      this.service.getPrevVersion(audit.entityType, audit.entityId, audit.commitVersion).subscribe((data) => {
-        alert(data.entityType);
 
-        var previousVersion = JSON.parse(data.entityValue),
-              currentVersion = audit.entityValue;
+      const modalRef = this.modalService.open(EntityAuditModalComponent);
+      modalRef.componentInstance.currentHealth = "LOL";
 
-        alert(diff2html);
-
-      });
+      // this.service.getPrevVersion(audit.entityType, audit.entityId, audit.commitVersion).subscribe((data) => {
+      //   alert(data.entityType);
+      //
+      //   var previousVersion = JSON.parse(data.entityValue),
+      //         currentVersion = audit.entityValue;
+      //
+      //   alert(diff2html);
+      //
+      // });
     }
   }
 }

@@ -29,7 +29,8 @@ import {
     UserResolve,
     UserModalService,
     EntityAuditComponent,
-    EntityAuditService
+    EntityAuditService,
+    EntityAuditModalComponent
 } from './';
 
 @NgModule({
@@ -53,13 +54,15 @@ import {
         JhiDocsComponent,
         JhiMetricsMonitoringComponent,
         JhiMetricsMonitoringModalComponent,
-        EntityAuditComponent
+        EntityAuditComponent,
+        EntityAuditModalComponent
     ],
     entryComponents: [
         UserMgmtDialogComponent,
         UserMgmtDeleteDialogComponent,
         JhiHealthModalComponent,
         JhiMetricsMonitoringModalComponent,
+        EntityAuditModalComponent
     ],
     providers: [
         AuditsService,
