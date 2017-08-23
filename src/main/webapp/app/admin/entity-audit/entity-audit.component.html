@@ -71,7 +71,7 @@
               <td>{{ audit.action }}</td>
               <td>{{ audit.commitVersion }}</td>
               <td><pre>{{ audit.entityValue | json }}</pre></td>
-              <td>{{ audit.modifiedDate }}</td>
+              <td>{{ audit.modifiedDate | date:'medium' }}</td>
               <td>{{ audit.modifiedBy }}</td>
               <td>
                 <button type="button" class="btn btn-info btn-xs" (click)=openChange(audit)>
