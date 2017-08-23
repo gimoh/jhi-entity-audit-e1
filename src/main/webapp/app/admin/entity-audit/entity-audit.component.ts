@@ -24,7 +24,7 @@ export class EntityAuditComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private service: EntityAuditService
-  ){}
+  ) {}
 
   ngOnInit() {
     this.service.getAllAudited().subscribe((entities) => {
@@ -46,17 +46,16 @@ export class EntityAuditComponent implements OnInit {
   }
 
   trackId(index: number, item: EntityAuditEvent) {
-	   return item.id;
-   }
+    return item.id;
+  }
 
-  openChange(audit) {
-
+  openChange(audit: EntityAuditEvent) {
     if (audit.commitVersion < 2) {
-      alert("There is no previous version available for this entry. \n This is the first audited captured for this object.");
+      alert('There is no previous version available for this entry. \n This ' +
+            'is the first audit entry captured for this object.');
     } else {
-      console.log(audit);
       const modalRef = this.modalService.open(EntityAuditModalComponent);
-      modalRef.componentInstance.openChange(audit);      
+      modalRef.componentInstance.openChange(audit);
     }
   }
 }
