@@ -51,10 +51,9 @@ export class EntityAuditComponent implements OnInit {
     if (audit.commitVersion <= 2) {
       alert("There is no previous version available for this entry. \n This is the first audited captured for this object.");
     } else {
-
+      console.log(audit);
       const modalRef = this.modalService.open(EntityAuditModalComponent);
-      modalRef.componentInstance.currentHealth = "LOL";
-
+      modalRef.componentInstance.openChange(audit);
       // this.service.getPrevVersion(audit.entityType, audit.entityId, audit.commitVersion).subscribe((data) => {
       //   alert(data.entityType);
       //

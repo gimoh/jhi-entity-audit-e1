@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { EntityAuditService } from './entity-audit.service';
+import { EntityAuditEvent } from './entity-audit-event.model';
 
 @Component({
     selector: 'entity-audit-modal',
@@ -9,29 +10,16 @@ import { EntityAuditService } from './entity-audit.service';
 })
 export class EntityAuditModalComponent {
 
-    currentHealth: any;
+    output: string;
 
     constructor(private healthService: EntityAuditService, public activeModal: NgbActiveModal) {}
 
-    // baseName(name) {
-    //     return this.healthService.getBaseName(name);
-    // }
-    //
-    // subSystemName(name) {
-    //     return this.healthService.getSubSystemName(name);
-    // }
+    ngOnInit() {
 
-    readableValue(value: number) {
-        if (this.currentHealth.name !== 'diskSpace') {
-            return value.toString();
-        }
-
-        // Should display storage space in an human readable unit
-        const val = value / 1073741824;
-        if (val > 1) { // Value
-            return val.toFixed(2) + ' GB';
-        } else {
-            return (value / 1048576).toFixed(2) + ' MB';
-        }
     }
+
+    openChange(audit: EntityAuditEvent) {
+      this.output = JSON.stringify(audit.entityValue, null, 2);
+    }
+
 }
