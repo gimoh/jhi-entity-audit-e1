@@ -11,7 +11,7 @@ import { EntityAuditModalComponent } from './entity-audit-modal.component';
   styles: []
 })
 export class EntityAuditComponent implements OnInit {
-  audits: EntityAuditEvent[] = [];
+  audits: EntityAuditEvent[];
   entities: string[] = [];
   selectedEntity: string;
   limits = [25, 50, 100, 200];
