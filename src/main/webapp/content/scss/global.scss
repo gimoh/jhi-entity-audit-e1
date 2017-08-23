@@ -199,5 +199,13 @@ ui bootstrap tweaks
 .uib-datepicker-popup  > li > div.uib-datepicker > table:focus {
     outline: none;
 }
+ins{
+  color: black;
+  background: #bbffbb;
+}
 
+del{
+  color: black;
+  background: #ffbbbb;
+}
 /* jhipster-needle-scss-add-main JHipster will add new css style */

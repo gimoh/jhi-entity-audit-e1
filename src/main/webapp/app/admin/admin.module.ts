@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { JhipsterSharedModule } from '../shared';
+import { DiffMatchPatchModule } from 'ng-diff-match-patch';
 /* jhipster-needle-add-admin-module-import - JHipster will add admin modules imports here */
 
 import {
@@ -37,6 +38,7 @@ import {
     imports: [
         JhipsterSharedModule,
         RouterModule.forRoot(adminState, { useHash: true }),
+        DiffMatchPatchModule,
         /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     ],
     declarations: [

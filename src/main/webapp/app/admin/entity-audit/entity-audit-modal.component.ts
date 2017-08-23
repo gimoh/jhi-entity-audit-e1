@@ -11,15 +11,24 @@ import { EntityAuditEvent } from './entity-audit-event.model';
 export class EntityAuditModalComponent {
 
     output: string;
+    left: string;
+    right: string;
 
-    constructor(private healthService: EntityAuditService, public activeModal: NgbActiveModal) {}
+    constructor(private service: EntityAuditService,
+                public activeModal: NgbActiveModal) {}
 
     ngOnInit() {
 
     }
 
     openChange(audit: EntityAuditEvent) {
-      this.output = JSON.stringify(audit.entityValue, null, 2);
+      this.service.getPrevVersion(audit.entityType, audit.entityId, audit.commitVersion).subscribe((data) => {
+
+        var previousVersion = JSON.stringify(JSON.parse(data.entityValue), null, 2),
+              currentVersion = JSON.stringify(audit.entityValue, null, 2);
+        this.left = previousVersion;
+        this.right = currentVersion;
+      });
     }
 
 }
